@@ -25,7 +25,7 @@ class Map extends Component {
         My Map Here
         <MyMapComponent
          isMarkerShown
-         googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+         googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnDRTGBF8TMfvIBEZeAX3wDPaDZ24RxUE&v=3.exp&libraries=geometry,drawing,places"
          loadingElement={<div style={{ height: `100%` }} />}
          containerElement={<div style={{ height: `400px` }} />}
          mapElement={<div style={{ height: `100%` }} />}
