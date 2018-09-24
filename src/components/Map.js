@@ -18,8 +18,8 @@ class Map extends Component {
     */
     const MyMapComponent = withScriptjs(withGoogleMap((props) =>
       <GoogleMap
-        defaultZoom = {props.zoom}
-        defaultCenter = {props.center}
+        defaultZoom = {this.state.zoom}
+        defaultCenter = {this.state.center}
         >
         {props.isMarkerShown && <Marker position={props.center} />}
       </GoogleMap>
@@ -30,7 +30,6 @@ class Map extends Component {
         <MyMapComponent
           center = {this.state.center}
           zoom = {this.state.zoom}
-          defaultZoom = {this.state.zoom}
           isMarkerShown
           googleMapURL="https://maps.googleapis.com/maps/api/js?&v=3.exp&libraries=geometry,drawing,places"
           loadingElement={<div style={{ height: `100%` }} />}
