@@ -1,0 +1,46 @@
+{
+  "markers": [{
+    "id": 1,
+    "name": "First Marker",
+    "address": "171 E Broadway, New York, NY 10002",
+    "latlng": {
+      "lat": 40.713829,
+      "lng": -73.989667
+    }
+  },
+  {
+    "id": 2,
+    "name": "Second Marker",
+    "address": "171 E Broadway, New York, NY 10002",
+    "latlng": {
+      "lat": 40.713829,
+      "lng": -73.989667
+    }
+  },
+  {
+    "id": 3,
+    "name": "Third Marker",
+    "address": "171 E Broadway, New York, NY 10002",
+    "latlng": {
+      "lat": 40.713829,
+      "lng": -73.989667
+    }
+  },
+  {
+    "id": 4,
+    "name": "Fourth Marker",
+    "address": "171 E Broadway, New York, NY 10002",
+    "latlng": {
+      "lat": 40.713829,
+      "lng": -73.989667
+    }
+  },
+  {
+    "id": 5,
+    "name": "Fifth Marker",
+    "address": "171 E Broadway, New York, NY 10002",
+    "latlng": {
+      "lat": 40.713829,
+      "lng": -73.989667
+    }
+  }
