@@ -6,8 +6,8 @@ class Map extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      center: { lat: 30.403191, lng: -86.867378 },
-      zoom: 12
+      center: { lat: 30.381025, lng: -86.866819 },
+      zoom: 15
     };
   }
 
@@ -21,7 +21,10 @@ class Map extends Component {
         defaultZoom = {this.state.zoom}
         defaultCenter = {this.state.center}
         >
-        {props.isMarkerShown && <Marker position={props.center} />}
+        {props.isMarkerShown && <Marker
+          position={{ lat: 30.379455, lng: -86.872770 }} />}
+        {props.isMarkerShown && <Marker
+          position={{ lat: 30.379693, lng: -86.868335 }} />}  
       </GoogleMap>
     ))
 
