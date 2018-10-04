@@ -1,5 +1,5 @@
-{
-  "markers": [{
+export const Markers = [
+    {
     "id": 1,
     "name": "Springhill Suites by Marriot Navarre Beach",
     "address": "8375 Gulf Blvd, Navarre, FL 32566",
@@ -44,4 +44,4 @@
       "lng": -86.870631
     }
   }
-]
+];

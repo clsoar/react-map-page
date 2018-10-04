@@ -1,15 +1,49 @@
 import React, { Component } from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 import './Map.css';
+import {Markers} from './markers.js';
+
 
 class Map extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+
+  state = {
       center: { lat: 30.381025, lng: -86.866819 },
-      zoom: 15
+      zoom: 15,
+      markers: [],
     };
-  }
+
+    getMarkers = () => {
+      for (let i = 0; i<Markers.length; i++) {
+        this.state.markers.push({
+          id: Markers[i]['id'],
+          name: Markers[i]['name'],
+          address: Markers[i]['address'],
+          latitude: Markers[i]['latlng']['lat'],
+          longitude: Markers[i]['latlng']['lng']
+        });
+
+        console.log(this.state.markers);
+      }
+    }
+    componentDidMount() {
+      this.getMarkers()
+    }
+  /*  this.getMarkerPosit = () => {
+      //loop through marker object to get latlng position and render
+
+      this.setState((state) => ({
+        markerPosits: state.markerPosits.map((mP) => Markers[mP]['latlng']).concat(mP)
+      }))
+      //      markerPosit: Markers[0]['latlng']
+      console.log(this.state.markerPosits)
+
+
+    }*/
+    //  const markerPosits = Markers.map((m) => Markers[m]['latlng'])
+
+
+
+
 
   render() {
     /*Boilerplate code to make react-google-maps library work
@@ -21,10 +55,14 @@ class Map extends Component {
         defaultZoom = {this.state.zoom}
         defaultCenter = {this.state.center}
         >
-        {props.isMarkerShown && <Marker
-          position={{ lat: 30.379455, lng: -86.872770 }} />}
-        {props.isMarkerShown && <Marker
-          position={{ lat: 30.379693, lng: -86.868335 }} />}  
+        {props.isMarkerShown && this.state.markers.map(marker => (
+            <Marker
+              key={marker.id}
+              position= {{ lat: marker.latitude, lng: marker.longitude }}
+            />
+          ))
+        }
+
       </GoogleMap>
     ))
 
