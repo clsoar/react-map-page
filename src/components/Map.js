@@ -13,6 +13,7 @@ class Map extends Component {
     };
 
     getMarkers = () => {
+      //loop through Markers file and get data
       for (let i = 0; i<Markers.length; i++) {
         this.state.markers.push({
           id: Markers[i]['id'],
@@ -21,27 +22,14 @@ class Map extends Component {
           latitude: Markers[i]['latlng']['lat'],
           longitude: Markers[i]['latlng']['lng']
         });
-
+        // TODO: remove this console log
         console.log(this.state.markers);
       }
     }
     componentDidMount() {
+      //mount markers to map class
       this.getMarkers()
     }
-  /*  this.getMarkerPosit = () => {
-      //loop through marker object to get latlng position and render
-
-      this.setState((state) => ({
-        markerPosits: state.markerPosits.map((mP) => Markers[mP]['latlng']).concat(mP)
-      }))
-      //      markerPosit: Markers[0]['latlng']
-      console.log(this.state.markerPosits)
-
-
-    }*/
-    //  const markerPosits = Markers.map((m) => Markers[m]['latlng'])
-
-
 
 
 
@@ -55,7 +43,9 @@ class Map extends Component {
         defaultZoom = {this.state.zoom}
         defaultCenter = {this.state.center}
         >
-        {props.isMarkerShown && this.state.markers.map(marker => (
+        {props.isMarkerShown &&
+          /* added .map to add latlng data from extendable object*/
+          this.state.markers.map(marker => (
             <Marker
               key={marker.id}
               position= {{ lat: marker.latitude, lng: marker.longitude }}
