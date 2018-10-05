@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Map from './components/Map.js';
+import ItemList from './components/ItemList.js';
 import './App.css';
 
 class App extends Component {
@@ -9,8 +10,11 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">My Map App</h1>
         </header>
-        <Map/>
+        <div className="Comps">
+          <ItemList/>
+          <Map/>
 
+        </div>
       </div>
     );
   }
