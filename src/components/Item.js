@@ -8,8 +8,6 @@ render() {
     <div className="items">
       <div className="item-heading">{this.props.item.name}</div>
       <div className="item-address">Item Address</div>
-      <p>test</p>
-
     </div>
   )
 }

@@ -8,6 +8,7 @@ import {Markers} from './components/markers.js';
 class App extends Component {
   state = {
     markers: [],
+    myarray: [{id : 0, name: "A"},{id : 1, name: "A"},{id : 2, name: "A"},{id : 3, name: "A"}, {id : 4, name: "A"}]
 
   };
 
@@ -43,6 +44,7 @@ class App extends Component {
         <div className="Comps">
           <ItemList
             items={this.state.markers}
+            myarray={this.state.myarray}
           />
           <Map
             markers={this.state.markers}
