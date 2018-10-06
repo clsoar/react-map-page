@@ -3,9 +3,7 @@ import Item from './Item.js'
 import './Map.css';
 
 class ItemList extends Component {
-  static propTypes = {
-    items: PropTypes.array.isRequired
-  }
+
 
   render(){
     return(
@@ -16,7 +14,7 @@ class ItemList extends Component {
             {this.props.items.map((item) => (
               <li key={item.id} className="item-list-item">
                 <Item
-                  items={item}
+                  item={item}
                 />
               </li>
             ))}
