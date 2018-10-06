@@ -8,15 +8,15 @@ import {Markers} from './components/markers.js';
 class App extends Component {
   state = {
     markers: [],
-    myarray: [{id : 0, name: "A"},{id : 1, name: "A"},{id : 2, name: "A"},{id : 3, name: "A"}, {id : 4, name: "A"}]
 
   };
 
 
   getMarkers = () => {
     //loop through Markers file and get data
+    const markerArray = [];
     for (let i = 0; i<Markers.length; i++) {
-      this.state.markers.push({
+      markerArray.push({
         id: Markers[i]['id'],
         name: Markers[i]['name'],
         address: Markers[i]['address'],
@@ -24,7 +24,8 @@ class App extends Component {
         longitude: Markers[i]['latlng']['lng']
       });
       // TODO: remove this console log
-      console.log(this.state.markers);
+      console.log(markerArray);
+      this.setState({markers : markerArray});
     }
   }
 

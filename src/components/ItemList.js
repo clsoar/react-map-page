@@ -11,14 +11,12 @@ class ItemList extends Component {
         <h2 className="list-bar-heading">This is the Item List</h2>
         <div className="item-bar">
           <ol className="item-list">
-            {this.props.myarray.map((item) => (
-              <div>
-                <li>
+            {this.props.items.map((item) => (
+                <li key={item.id}>
                   <Item
                     item={item}
                   />
                 </li>
-              </div>
             ))}
 
           </ol>
