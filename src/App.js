@@ -7,25 +7,28 @@ import {Markers} from './components/markers.js';
 
 class App extends Component {
   state = {
-    items: [],
+    markers: [],
+
   };
 
-  getItems = () => {
-    //get data from markers file
+
+  getMarkers = () => {
+    //loop through Markers file and get data
     for (let i = 0; i<Markers.length; i++) {
-      this.state.items.push({
+      this.state.markers.push({
         id: Markers[i]['id'],
         name: Markers[i]['name'],
         address: Markers[i]['address'],
         latitude: Markers[i]['latlng']['lat'],
         longitude: Markers[i]['latlng']['lng']
       });
-      console.log(this.state.items);
-
-  }}
+      // TODO: remove this console log
+      console.log(this.state.markers);
+    }
+  }
 
   componentDidMount() {
-    this.getItems()
+    this.getMarkers()
   }
 
 
@@ -39,9 +42,11 @@ class App extends Component {
         </header>
         <div className="Comps">
           <ItemList
-            items={this.state.items}
+            items={this.state.markers}
           />
-          <Map/>
+          <Map
+            markers={this.state.markers}
+          />
 
         </div>
       </div>

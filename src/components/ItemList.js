@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Item from './Item.js'
+import Item from './Item.js';
 import './Map.css';
 
 class ItemList extends Component {
