@@ -15,6 +15,10 @@
   position: sticky;
   }
 
-.ItemList {
+.item-list-bar {
   color: pink;
+}
+
+.items {
+  color: blue;
 }

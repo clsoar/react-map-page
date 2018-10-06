@@ -27,7 +27,6 @@ class Map extends Component {
       }
     }
     componentDidMount() {
-      //mount markers to map class
       this.getMarkers()
     }
 
