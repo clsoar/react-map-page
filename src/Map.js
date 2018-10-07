@@ -15,7 +15,7 @@ class Map extends Component {
 
   render() {
     /*Boilerplate code to make react-google-maps library work
-    taken from react-google-maps installation documentation
+    taken from react-google-maps installation and usage documentation
     https://tomchentw.github.io/react-google-maps/#installation
     */
     const MyMapComponent = withScriptjs(withGoogleMap((props) =>
@@ -25,15 +25,16 @@ class Map extends Component {
         >
         {props.isMarkerShown &&
           /* added .map to add latlng data from extendable object*/
-          this.props.markers.map(marker => (
+          this.props.markers.map((marker) => (
             <Marker
               key={marker.id}
               position= {{ lat: marker.latitude, lng: marker.longitude }}
-              onClick={props.onToggleOpen}
+              onClick={() => this.props.onToggleOpen(marker)}
             >
-            {props.isOpen &&
-              <InfoWindow onCloseClick={props.onToggleOpen}>
-                <FaAnchor />
+              {marker.isOpen &&
+              <InfoWindow
+              >
+                <div>test</div>
               </InfoWindow>}
             </Marker>
           ))

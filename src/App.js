@@ -9,15 +9,23 @@ import {Markers} from './markers.js';
 class App extends Component {
   state = {
     markers: [],
-    isOpen: false
 
-  };
-
-  onToggleOpen = ({isOpen}) => {
-    ({isOpen}) ?
-    this.setState({ isOpen: false}):
-    this.setState({ isOpen: true});
   }
+
+
+
+  onToggleOpen2 = ({ isOpen }) => {
+  //  this.setState({ isOpen : !isOpen })
+  }
+
+
+  onToggleOpen3 = () => {
+    //toggles isOpen to true/false
+  //  if (this.state.isOpen === false) {
+    //this.setState({isOpen : true})}
+
+  }
+
 
   getMarkers = () => {
     //loop through Markers file and get data
@@ -28,7 +36,8 @@ class App extends Component {
         name: Markers[i]['name'],
         address: Markers[i]['address'],
         latitude: Markers[i]['latlng']['lat'],
-        longitude: Markers[i]['latlng']['lng']
+        longitude: Markers[i]['latlng']['lng'],
+        isOpen: false
       });
       // TODO: remove this console log
       console.log(markerArray);
@@ -40,6 +49,28 @@ class App extends Component {
     this.getMarkers()
   }
 
+  updateOpenState = (marker) => {
+
+  }
+
+  closeInfoWindows = () => {
+    //these code hints to close other open windows given by Forrest Walker
+    // tutorial found at https://www.youtube.com/watch?v=VhXuEvkpxK0
+    const markers= this.state.markers.map(marker => {
+      marker.isOpen = false;
+      return marker;
+    });
+    this.setState({ markers: Object.assign(this.state.markers, markers) });
+  }
+
+  onToggleOpen = (marker) => {
+    //these code hints to connect the marker given by Forrest Walker
+    // tutorial found at https://www.youtube.com/watch?v=VhXuEvkpxK0
+    this.closeInfoWindows();
+    marker.isOpen = true;
+    this.setState({ markers: Object.assign(this.state.markers, marker) });
+
+  }
 
   render() {
     return (
@@ -54,8 +85,9 @@ class App extends Component {
           />
           <Map
             markers={this.state.markers}
-            isOpen={this.state.isOpen}
-            onToggleOpen = {this.onToggleOpen}
+            onToggleOpen={this.onToggleOpen}
+            onToggleOpen2={this.onToggleOpen2}
+            onToggleOpen3={this.onToggleOpen3}
           />
 
         </div>
