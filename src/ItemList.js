@@ -12,7 +12,7 @@ class ItemList extends Component {
         <div className="item-bar">
           <ol className="item-list">
             {this.props.items.map((item) => (
-                <li key={item.id}>
+                <li key={item.id} className="item-list-items">
                   <Item
                     item={item}
                   />

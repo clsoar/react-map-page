@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
-import Map from './components/Map.js';
-import ItemList from './components/ItemList.js';
+import Map from './Map.js';
+import ItemList from './ItemList.js';
 import './App.css';
-import {Markers} from './components/markers.js';
+import {Markers} from './markers.js';
+
 
 
 class App extends Component {
   state = {
     markers: [],
+    isOpen: false
 
   };
 
+  onToggleOpen = ({isOpen}) => {
+    ({isOpen}) ?
+    this.setState({ isOpen: false}):
+    this.setState({ isOpen: true});
+  }
 
   getMarkers = () => {
     //loop through Markers file and get data
@@ -34,8 +41,6 @@ class App extends Component {
   }
 
 
-
-
   render() {
     return (
       <div className="App">
@@ -49,9 +54,14 @@ class App extends Component {
           />
           <Map
             markers={this.state.markers}
+            isOpen={this.state.isOpen}
+            onToggleOpen = {this.onToggleOpen}
           />
 
         </div>
+        <footer className="App-footer">
+          <div className="footer-text">Footer Info</div>
+        </footer>
       </div>
     );
   }

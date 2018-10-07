@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 import './Map.css';
+import {FaAnchor} from 'react-icons/fa';
 
 
 class Map extends Component {
@@ -9,6 +10,8 @@ class Map extends Component {
       center: { lat: 30.381025, lng: -86.866819 },
       zoom: 15,
     };
+
+
 
   render() {
     /*Boilerplate code to make react-google-maps library work
@@ -26,7 +29,13 @@ class Map extends Component {
             <Marker
               key={marker.id}
               position= {{ lat: marker.latitude, lng: marker.longitude }}
-            />
+              onClick={props.onToggleOpen}
+            >
+            {props.isOpen &&
+              <InfoWindow onCloseClick={props.onToggleOpen}>
+                <FaAnchor />
+              </InfoWindow>}
+            </Marker>
           ))
         }
 
