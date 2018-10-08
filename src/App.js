@@ -81,7 +81,7 @@ class App extends Component {
         <div className="Comps">
           <ItemList
             items={this.state.markers}
-            myarray={this.state.myarray}
+            onToggleOpen={this.onToggleOpen}
           />
           <Map
             markers={this.state.markers}

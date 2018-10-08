@@ -1,3 +1,4 @@
+/*global google*/
 import React, { Component } from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 import './Map.css';
@@ -29,7 +30,8 @@ class Map extends Component {
             <Marker
               key={marker.id}
               position= {{ lat: marker.latitude, lng: marker.longitude }}
-              onClick={() => this.props.onToggleOpen(marker)}
+              onClick={() => {this.props.onToggleOpen(marker)}}
+              animation= {marker.isOpen && google.maps.Animation.DROP}
             >
               {marker.isOpen &&
               <InfoWindow

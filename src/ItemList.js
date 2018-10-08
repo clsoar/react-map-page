@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Item from './Item.js';
 import './Map.css';
+import { InfoWindow } from 'react-google-maps';
+
 
 class ItemList extends Component {
 
@@ -12,10 +14,19 @@ class ItemList extends Component {
         <div className="item-bar">
           <ol className="item-list">
             {this.props.items.map((item) => (
-                <li key={item.id} className="item-list-items">
+                <li
+                  key={item.id}
+                  className="item-list-items"
+                  onClick={()=> this.props.onToggleOpen(item)}
+                  >
                   <Item
                     item={item}
-                  />
+                  >
+                  {item.isOpen &&
+                  <InfoWindow>
+                  <p>test</p>
+                  </InfoWindow>}
+                  </Item>
                 </li>
             ))}
 
