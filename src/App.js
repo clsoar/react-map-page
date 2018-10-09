@@ -76,11 +76,11 @@ class App extends Component {
   closeInfoWindows = () => {
     //these code hints to close other open windows given by Forrest Walker
     // tutorial found at https://www.youtube.com/watch?v=VhXuEvkpxK0
-    const markers= this.state.markers.map(marker => {
+    const markers= this.state.data.locations.map(marker => {
       marker.isOpen = false;
       return marker;
     });
-    this.setState({ markers: Object.assign(this.state.markers, markers) });
+    this.setState({ markers: Object.assign(this.state.data.locations, markers) });
   }
 
   onToggleOpen = (marker) => {
@@ -88,7 +88,7 @@ class App extends Component {
     // tutorial found at https://www.youtube.com/watch?v=VhXuEvkpxK0
     this.closeInfoWindows();
     marker.isOpen = true;
-    this.setState({ markers: Object.assign(this.state.markers, marker) });
+    this.setState({ markers: Object.assign(this.state.data.locations, marker) });
 
   }
 

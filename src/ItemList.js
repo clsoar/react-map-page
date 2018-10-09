@@ -14,7 +14,7 @@ class ItemList extends Component {
         <h2 className="list-bar-heading">This is the Item List</h2>
         <div className="item-bar">
           <ol className="item-list">
-            {this.props.markers.map((item) => (
+            {this.props.items.map((item) => (
                 <li
                   key={item.id}
                   className="item-list-items"
