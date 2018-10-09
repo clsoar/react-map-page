@@ -8,7 +8,7 @@ import './App.css';
 class App extends Component {
   state = {
     markers: [],
-    data: {},
+    data: [],
     error: null
   }
 
@@ -57,7 +57,7 @@ class App extends Component {
           throw new Error('Oops. Something is wrong with the data you requested');
         }
       })
-      .then(data => this.setState({ data }))
+      .then(data => this.setState({ data: data.locations }))
       .catch(error => this.setState({ error }))
       .then(this.getMarkers())
       .then(console.log(this.state.markers))
@@ -76,11 +76,11 @@ class App extends Component {
   closeInfoWindows = () => {
     //these code hints to close other open windows given by Forrest Walker
     // tutorial found at https://www.youtube.com/watch?v=VhXuEvkpxK0
-    const markers= this.state.data.locations.map(marker => {
+    const markers= this.state.data.map(marker => {
       marker.isOpen = false;
       return marker;
     });
-    this.setState({ markers: Object.assign(this.state.data.locations, markers) });
+    this.setState({ data: Object.assign(this.state.data, markers) });
   }
 
   onToggleOpen = (marker) => {
@@ -88,7 +88,7 @@ class App extends Component {
     // tutorial found at https://www.youtube.com/watch?v=VhXuEvkpxK0
     this.closeInfoWindows();
     marker.isOpen = true;
-    this.setState({ markers: Object.assign(this.state.data.locations, marker) });
+    this.setState({ data: Object.assign(this.state.data, marker) });
 
   }
 
@@ -100,13 +100,13 @@ class App extends Component {
         </header>
         <div className="Comps">
           <ItemList
-            items={this.state.markers}
+            items={this.state.data}
             onToggleOpen={this.onToggleOpen}
             error={this.state.error}
             markers={this.state.data.locations}
           />
           <Map
-            markers={this.state.data.locations}
+            markers={this.state.data}
             onToggleOpen={this.onToggleOpen}
             error={this.state.error}
           />

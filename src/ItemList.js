@@ -18,7 +18,7 @@ class ItemList extends Component {
                 <li
                   key={item.id}
                   className="item-list-items"
-                  onClick={()=> this.props.onToggleOpen(item)}
+                  onClick={() => this.props.onToggleOpen(item)}
                   >
                   <Item
                     item={item}
