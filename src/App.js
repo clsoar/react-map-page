@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import Map from './Map.js';
 import ItemList from './ItemList.js';
 import './App.css';
-import {Markers} from './markers.js';
 
 
 
 class App extends Component {
   state = {
     markers: [],
-
+    data: {},
+    error: null
   }
 
 
@@ -30,13 +30,14 @@ class App extends Component {
   getMarkers = () => {
     //loop through Markers file and get data
     const markerArray = [];
-    for (let i = 0; i<Markers.length; i++) {
+    const data= this.state.data;
+    for (let i = 0; i<data.length; i++) {
       markerArray.push({
-        id: Markers[i]['id'],
-        name: Markers[i]['name'],
-        address: Markers[i]['address'],
-        latitude: Markers[i]['latlng']['lat'],
-        longitude: Markers[i]['latlng']['lng'],
+        id: data[i]['id'],
+        name: data[i]['name'],
+        address: data[i]['address'],
+        latitude: data[i]['latlng']['lat'],
+        longitude: data[i]['latlng']['lng'],
         isOpen: false
       });
       // TODO: remove this console log
@@ -45,8 +46,27 @@ class App extends Component {
     }
   }
 
+  getMarkerInfo = () => {
+    //Fetch how-to for react code found at https://www.robinwieruch.de/react-fetching-data/
+    //API data gathered by Cherie-Lee Mason and hosted at http://myjson.com/api
+    fetch('https://api.myjson.com/bins/1brwgk')
+      .then(response => {
+        if(response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Oops. Something is wrong with the data you requested');
+        }
+      })
+      .then(data => this.setState({ data }))
+      .catch(error => this.setState({ error }))
+      .then(this.getMarkers())
+      .then(console.log(this.state.markers))
+      .catch(error => this.setState({ error }));
+
+  }
+
   componentDidMount() {
-    this.getMarkers()
+    this.getMarkerInfo();
   }
 
   updateOpenState = (marker) => {
@@ -82,12 +102,13 @@ class App extends Component {
           <ItemList
             items={this.state.markers}
             onToggleOpen={this.onToggleOpen}
+            error={this.state.error}
+            markers={this.state.data.locations}
           />
           <Map
-            markers={this.state.markers}
+            markers={this.state.data.locations}
             onToggleOpen={this.onToggleOpen}
-            onToggleOpen2={this.onToggleOpen2}
-            onToggleOpen3={this.onToggleOpen3}
+            error={this.state.error}
           />
 
         </div>

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 import './Map.css';
 import {FaAnchor} from 'react-icons/fa';
+import InfoWindowContent from './InfoWindowContent.js';
 
 
 class Map extends Component {
@@ -24,19 +25,27 @@ class Map extends Component {
         defaultZoom = {this.state.zoom}
         defaultCenter = {this.state.center}
         >
-        {props.isMarkerShown &&
+        {(this.props.error) ?
+            <InfoWindow
+              position= {this.state.center}>
+              <p className="error-message">{this.props.error.message}</p>
+            </InfoWindow>
+            :
+            props.isMarkerShown &&
           /* added .map to add latlng data from extendable object*/
           this.props.markers.map((marker) => (
             <Marker
               key={marker.id}
-              position= {{ lat: marker.latitude, lng: marker.longitude }}
+              position= {{ lat: marker.latlng.lat, lng: marker.latlng.lng }}
               onClick={() => {this.props.onToggleOpen(marker)}}
               animation= {marker.isOpen && google.maps.Animation.DROP}
             >
               {marker.isOpen &&
               <InfoWindow
               >
-                <div>test</div>
+                <InfoWindowContent
+                  marker = { marker }
+                />
               </InfoWindow>}
             </Marker>
           ))

@@ -1,0 +1,118 @@
+{
+"locations": [{
+  "id": 1,
+  "name": "Springhill Suites by Marriot Navarre Beach",
+  "website": "https://www.marriott.com/hotels/travel/vpssh-springhill-suites-navarre-beach/?scid=bb1a189a-fec3-4d19-a255-54ba596febe2",
+  "address": "8375 Gulf Blvd, Navarre, FL 32566",
+  "phone": "(850) 939-0010",
+  "latlng": {
+    "lat": 30.379375,
+    "lng": -86.872778
+  },
+  "pool": true,
+  "fitnessCenter": true,
+  "tennisCourt": true,
+  "beachAccess": true,
+  "typeOfBuilding": "hotel",
+  "parking": true,
+  "restaurant": {
+    "value": true,
+    "name": "Beach House Bar and Grill",
+    "website": "http://www.navarrebeachhousebarandgrille.com/"
+  },
+  "description": "Elevate your next Florida vacation by staying at SpringHill Suites Navarre Beach. Nestled by the area's white-sand beachfront, our brand-new, all-suite hotel blends residence-inspired comfort with resort-like amenities. Each stylish suite features separate living spaces, private balconies and spectacular Gulf of Mexico or Santa Rosa Sound views. Take a dip in our lazy river or indoor pool, then keep your workout routine in our fitness center. Stay in-touch with complimentary Wi-Fi and start each day to a free breakfast buffet. Sample elevated dishes at Beach House Bar and Grille, offering indoor and outdoor dining overlooking the water, then enjoy a nightcap at our two on-site bars. Our beachfront hotel also offers over 3,000 square feet of event space for weddings, meetings and special occasions. Attendees will appreciate our central location, within walking distance to Navarre Beach Marine Park. Our hotel also offers easy access to the Gulf Islands National Seashore, Fort Walton Beach and Pensacola Beach."
+},
+{
+  "id": 2,
+  "name": "Caribbean Resort Condominium",
+  "website": "http://www.caribbean-resort-florida.com/",
+  "address": "8477 Gulf Blvd, Gulf Breeze, FL 32566",
+  "phone": "(800) 400-4172",
+  "latlng": {
+    "lat": 30.379693,
+    "lng": -86.869044
+  },
+  "pool": true,
+  "fitnessCenter": false,
+  "tennisCourt": false,
+  "beachAccess": true,
+  "typeOfBuilding": "condo",
+  "parking": true,
+  "restaurant": {
+    "value": false,
+    "name": "",
+    "website": ""
+  },
+  "description": "The beautiful 19-story Caribbean Resort condominium is located directly on the beach and features upscale studio, two and three bedroom units with private balconies and floor-to-ceiling glass that provide spectacular vistas of the Gulf and Sound. Property amenities include a seasonally heated pool, hot tub and free video rentals.The most elegant address on Navarre Beach, Florida! Caribbean Resort, FL features floor-to-ceiling glass affording spectacular views of both the Gulf of Mexico and Santa Rosa Sound. Many units feature designer touches such as marble countertops, gourmet kitchens, and hand painted furniture. Only three exquisite units per floor! Comparably priced, yet a cut above other condo rentals."
+},
+{
+  "id": 3,
+  "name": "Beach Colony Condos",
+  "website": "http://www.condosgulfcoast.com/",
+  "address": "8515 Gulf Blvd, Navarre, FL 32566",
+  "phone": "(205) 243-8440",
+  "latlng": {
+    "lat": 30.380396,
+    "lng": -86.867370
+  },
+  "pool": true,
+  "fitnessCenter": true,
+  "tennisCourt": true,
+  "beachAccess": true,
+  "typeOfBuilding": "condo",
+  "parking": true,
+  "restaurant": {
+    "value": false,
+    "name": "",
+    "website": ""
+  },
+  "description": "Beach Colony Resort is the newest gulf front condo complex on Navarre Beach. Beach Colony is situated in Navarre Beach which is on Santa Rosa Island which has been rated as one of the top 10 beaches in the US. Beautiful sugar white sand and crystal clear emerald green water. This is the perfect place to enjoy your vacation. Navarre Beach is surrounded by parks which contain over 15 miles of emerald green water, pristine beaches and undisturbed sand dunes."
+},
+{
+  "id": 4,
+  "name": "Navarre Beach Regency Condo",
+  "website": "http://www.navarrebeachregency21.com/",
+  "address": "8525 Gulf Blvd, Navarre, FL 32566",
+  "phone": "(850) 939-5756",
+  "latlng": {
+    "lat": 30.379643,
+    "lng": -86.866083
+  },
+  "pool": true,
+  "fitnessCenter": true,
+  "tennisCourt": true,
+  "beachAccess": true,
+  "typeOfBuilding": "condo",
+  "parking": true,
+  "restaurant": {
+    "value": false,
+    "name": "",
+    "website": ""
+  },
+  "description": "Navarre Beach Regency is truly the gem of Navarre Beach vacation destinations. Navarre Beach Regency's large pool sits on the gulf side of  the building. All Navarre Beach Regency units front the Gulf of Mexico with large balconies that open from the living room and master bedroom. Breathtaking views of the sugar white sands of Navarre Beach and the Gulf Of Mexico await you from every unit."
+},
+{
+  "id": 5,
+  "name": "Sugar Beach Townhomes",
+  "website": "http://sugarbeach21.com/",
+  "address": "8443 Gulf Blvd, Navarre, FL 32566",
+  "phone": "(800) 757-2121",
+  "latlng": {
+    "lat": 30.379619,
+    "lng": -86.870631
+  },
+  "pool": true,
+  "fitnessCenter": false,
+  "tennisCourt": false,
+  "beachAccess": true,
+  "typeOfBuilding": "townhome",
+  "parking": true,
+  "restaurant": {
+    "value": false,
+    "name": "",
+    "website": ""
+  },
+  "description": "Navarre Beach offers all the amenities of a classic Florida vacation. Navarre Beach is a paradise for those who love the natural beauty of the outdoors. Navarre Beach is part of the Gulf Islands National Seashore and Navarre Beach includes miles of undeveloped beaches, where the Gulf of Mexico laps gently against soft, pure sands of the shores. Navarre Beach is  rated one of the best beaches in the nation by the University of Maryland's Laboratory for Coastal Research. Researchers gave Navarre Beach high marks for sugar white sand, water and air temperatures, number of sunny days and gentle currents."
+}
+]
+}

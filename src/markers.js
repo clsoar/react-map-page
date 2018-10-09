@@ -42,6 +42,7 @@ export const Markers = [
     "latlng": {
       "lat": 30.379619,
       "lng": -86.870631
-    }
+    },
+    "websiteForAPI": "https://api.myjson.com/bins/1brwgk"
   }
 ];

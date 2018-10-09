@@ -7,7 +7,6 @@ render() {
   return(
     <div className="items">
       <div className="item-heading">{this.props.item.name}</div>
-      <div className="item-address">{this.props.item.address}</div>
     </div>
   )
 }
