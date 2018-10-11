@@ -1,25 +1,31 @@
 .info-window {
+
 }
 
 .window-content {
-  width: 300px;
+  padding-left: 0px;
+
 }
 
 .amenities-list {
   list-style-type: none;
   display: inline-grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   padding-left: 0px;
 }
 
 .amenity {
+  color: white;
+  background-color: teal;
+  padding: 5px;
+}
+.restaurant-info {
+  padding-left: 0px;
+  list-style-type: none;
 
 }
-
-.restaurant-name, .restaurant-website {
-  list-style-type: none;
-  display: inline;
-  padding: 10px;
+.restaurant-name {
+  font-weight: 400;
 }
 
 .description {

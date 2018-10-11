@@ -5,7 +5,7 @@ const OnsiteFood = (props) =>
 
   <ul className="restaurant-info">
     <li className="restaurant-name">{props.marker.restaurant.name}</li>
-    <li className="restaurant-website"><a href={props.marker.restaurant.website}>Restaurant Website</a></li>
+    <li className="restaurant-website"><a target="_blank" href={props.marker.restaurant.website}>Restaurant Website</a></li>
   </ul>
 
 

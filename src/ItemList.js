@@ -13,7 +13,6 @@ class ItemList extends Component {
   render(){
     return (
       <div className="item-list-bar">
-        <h2 className="list-bar-heading">Navarre Beach</h2>
         <FilterOptions
           selectFilter={this.props.selectFilter}
           value={this.props.value}

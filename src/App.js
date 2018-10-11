@@ -123,7 +123,8 @@ class App extends Component {
 
         </div>
         <footer className="App-footer">
-          <div className="footer-text">Footer Info</div>
+          <div className="footer-text">CL Mason Product</div>
+          <div className="shoutout">using Google Maps and myJSON API data</div>
         </footer>
       </div>
     );

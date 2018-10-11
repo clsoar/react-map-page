@@ -5,8 +5,7 @@
 
 .App-header {
   background-color: #222;
-  height: 70px;
-  padding: 20px;
+  padding: 5px;
   color: lightblue;
 }
 
@@ -16,9 +15,11 @@
 
 .App-footer {
   background-color: black;
-  height: 30px;
-  padding: 10px;
+  padding: 5px;
   color: lightblue
+}
+.shoutout {
+  font-size: .7em;
 }
 
 @keyframes App-logo-spin {
