@@ -9,7 +9,8 @@ class App extends Component {
   state = {
     markers: [],
     data: [],
-    error: null
+    error: null,
+    value: "default"
   }
 
 
@@ -89,14 +90,20 @@ class App extends Component {
     this.closeInfoWindows();
     marker.isOpen = true;
     this.setState({ data: Object.assign(this.state.data, marker) });
-
   }
+
+
+  selectFilter = (event) => {
+    //sets filter value in state
+    this.setState({value: event.target.value});
+  }
+
 
   render() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">My Map App</h1>
+          <h1 className="App-title">Navarre Vacations</h1>
         </header>
         <div className="Comps">
           <ItemList
@@ -104,11 +111,14 @@ class App extends Component {
             onToggleOpen={this.onToggleOpen}
             error={this.state.error}
             markers={this.state.data.locations}
+            selectFilter={this.selectFilter}
+            value={this.state.value}
           />
           <Map
             markers={this.state.data}
             onToggleOpen={this.onToggleOpen}
             error={this.state.error}
+            value={this.state.value}
           />
 
         </div>

@@ -1,0 +1,26 @@
+.info-window {
+}
+
+.window-content {
+  width: 300px;
+}
+
+.amenities-list {
+  list-style-type: none;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-left: 0px;
+}
+
+.amenity {
+
+}
+
+.restaurant-name, .restaurant-website {
+  list-style-type: none;
+  display: inline;
+  padding: 10px;
+}
+
+.description {
+}

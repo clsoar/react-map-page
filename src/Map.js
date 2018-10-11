@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 import './Map.css';
+import './InfoWindow.css';
 import {FaAnchor} from 'react-icons/fa';
 import InfoWindowContent from './InfoWindowContent.js';
 
@@ -12,13 +13,15 @@ const MyMapComponent = withScriptjs(withGoogleMap((props, state) =>
     >
     {(props.error) ?
         <InfoWindow
-          position= {state.center}>
+          position= {{ lat: 30.381025, lng: -86.866819 }}>
           <p className="error-message">{props.error.message}</p>
         </InfoWindow>
         :
         props.isMarkerShown &&
       /* added .map to add latlng data from extendable object*/
-      props.markers.map((marker) => (
+      props.markers
+      .filter((marker) => (marker[props.value] || props.value == "default"))
+      .map((marker) => (
         <Marker
           key={marker.id}
           position= {{ lat: marker.latlng.lat, lng: marker.latlng.lng }}
@@ -26,7 +29,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props, state) =>
           animation= {marker.isOpen && google.maps.Animation.DROP}
         >
           {marker.isOpen &&
-          <InfoWindow
+          <InfoWindow className="info-window"
           >
             <InfoWindowContent
               marker = { marker }

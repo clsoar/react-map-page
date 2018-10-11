@@ -4,18 +4,19 @@
   https://css-tricks.com/books/volume-i/holy-grail-layout-5-lines-css/
   */
   display: grid;
-  grid-template-columns: 150px auto;
+  grid-template-columns: 1fr;
+
   grid-gap: .1em;
 }
 .Map {
   text-align: center;
-  height: 150px;
+
   padding: 5px;
-  position: sticky;
   }
 
 .item-list-bar {
-  color: pink;
+  color: Navy;
+  padding: 5px;
 }
 .item-list {
   padding-left: 0px;

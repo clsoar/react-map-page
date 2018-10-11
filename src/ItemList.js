@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Item from './Item.js';
 import './Map.css';
+import './InfoWindow.css';
 import { InfoWindow } from 'react-google-maps';
 import InfoWindowContent from './InfoWindowContent.js';
+import FilterOptions from './FilterOptions.js';
 
 
 class ItemList extends Component {
@@ -11,10 +13,16 @@ class ItemList extends Component {
   render(){
     return (
       <div className="item-list-bar">
-        <h2 className="list-bar-heading">This is the Item List</h2>
+        <h2 className="list-bar-heading">Navarre Beach</h2>
+        <FilterOptions
+          selectFilter={this.props.selectFilter}
+          value={this.props.value}
+        />
         <div className="item-bar">
           <ol className="item-list">
-            {this.props.items.map((item) => (
+            {this.props.items
+              .filter((item) => (item[this.props.value] || this.props.value == "default"))
+              .map((item) => (
                 <li
                   key={item.id}
                   className="item-list-items"
@@ -24,7 +32,7 @@ class ItemList extends Component {
                     item={item}
                   >
                   {item.isOpen &&
-                  <InfoWindow>
+                  <InfoWindow className="info-window">
                     <InfoWindowContent
                       marker={ item }
                     />
