@@ -30,3 +30,24 @@
 
 .description {
 }
+
+/*
+ * Media Queries
+ */
+
+ /*
+ * Screens wider than 600px
+ */
+@media screen and (min-width: 600px) {
+  .amenities-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/*
+* Screens wider than 950px
+*/
+@media screen and (min-width: 950px) {
+  .amenities-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

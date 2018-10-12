@@ -22,7 +22,30 @@
   font-size: .7em;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/*
+ * Media Queries
+ */
+
+ /*
+ * Screens wider than 600px
+ */
+@media screen and (min-width: 600px) {
+  .App-header {
+    padding: 20px;
+  }
+  .App-footer {
+    padding: 15px;
+  }
+}
+
+/*
+* Screens wider than 950px
+*/
+@media screen and (min-width: 950px) {
+  .App {
+    max-width: 950px;
+    border: 5px solid black;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

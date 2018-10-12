@@ -62,7 +62,7 @@
  * Screens wider than 600px
  */
 @media screen and (min-width: 600px) {
-  	.filter-options{
-
-  	}
+  .Comps {
+    grid-template-columns: .6fr 1.4fr;
+  }
   }
