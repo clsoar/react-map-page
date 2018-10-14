@@ -1,8 +1,10 @@
+# Navarre Beach Accomadations App
 
+A single-page map app that allows users to view vacation accomadations, filter them by available amenities, see them on the map, and view details of each place within a pop-up informational window.
 
 ## Getting Started
 
-In the project directory, run:
+Download or clone this repository and then in the project directory, run `npm start` or `npm run build` as described below.
 
 ### `npm start`
 
@@ -14,14 +16,29 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 Builds the app for production to the `build` folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-After the build completes to view the app, run `serve -s build`.
+After the build completes, run `serve -s build`.
 Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
 
 Note: The service worker will only be implemented if you build the app for production.
 
-----------------------------------------------------------------------------------
+## Use
+
+The dropdown menu provides a list of amenities that the user may use to filter the available )accomadations.
+
+More information can be viewed by clicking on the list of accomdations or on the map markers. Information includes name, address, phone number, website, type of accomadations, available amenities, and a description of the location.
+
+## Dependencies
+
+* Google Maps Javascript API v3 - The map runs in developer mode or an API key can be obtained and included in Maps.js at 73:65 as key="YOUR-API-KEY-HERE".
+* myJSON.com API is 
+
+## Credit
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+React-google-maps library was used to integrate Google Maps into React. Documentation can be found at the Github Repo [https://github.com/tomchentw/react-google-maps](https://github.com/tomchentw/react-google-maps).
+
+Forrest Walker's YouTube tutorial and Slack tips helped troubleshoot opening the InfoWindows and with a map refresh issue. His YouTube tutorial can be found on his [channel](https://www.youtube.com/watch?v=VhXuEvkpxK0).
 
 ## Folder Structure
 
