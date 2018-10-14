@@ -2,50 +2,17 @@ import React, { Component } from 'react';
 import Map from './Map.js';
 import ItemList from './ItemList.js';
 import './App.css';
+import DocumentTitle from 'react-document-title';
 
 
 
 class App extends Component {
   state = {
-    markers: [],
     data: [],
     error: null,
     value: "default"
   }
 
-
-
-  onToggleOpen2 = ({ isOpen }) => {
-  //  this.setState({ isOpen : !isOpen })
-  }
-
-
-  onToggleOpen3 = () => {
-    //toggles isOpen to true/false
-  //  if (this.state.isOpen === false) {
-    //this.setState({isOpen : true})}
-
-  }
-
-
-  getMarkers = () => {
-    //loop through Markers file and get data
-    const markerArray = [];
-    const data= this.state.data;
-    for (let i = 0; i<data.length; i++) {
-      markerArray.push({
-        id: data[i]['id'],
-        name: data[i]['name'],
-        address: data[i]['address'],
-        latitude: data[i]['latlng']['lat'],
-        longitude: data[i]['latlng']['lng'],
-        isOpen: false
-      });
-      // TODO: remove this console log
-      console.log(markerArray);
-      this.setState({markers : markerArray});
-    }
-  }
 
   getMarkerInfo = () => {
     //Fetch how-to for react code found at https://www.robinwieruch.de/react-fetching-data/
@@ -60,9 +27,6 @@ class App extends Component {
       })
       .then(data => this.setState({ data: data.locations }))
       .catch(error => this.setState({ error }))
-      .then(this.getMarkers())
-      .then(console.log(this.state.markers))
-      .catch(error => this.setState({ error }));
 
   }
 
@@ -92,7 +56,6 @@ class App extends Component {
     this.setState({ data: Object.assign(this.state.data, marker) });
   }
 
-
   selectFilter = (event) => {
     //sets filter value in state
     this.setState({value: event.target.value});
@@ -101,31 +64,34 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Navarre Vacations</h1>
-        </header>
-        <div className="Comps">
-          <ItemList
-            items={this.state.data}
-            onToggleOpen={this.onToggleOpen}
-            error={this.state.error}
-            markers={this.state.data.locations}
-            selectFilter={this.selectFilter}
-            value={this.state.value}
-          />
-          <Map
-            markers={this.state.data}
-            onToggleOpen={this.onToggleOpen}
-            error={this.state.error}
-            value={this.state.value}
-          />
+      <div className="Page">
+        <DocumentTitle title='Navarre Beach Accomadations'/>
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title">Navarre Vacations</h1>
+          </header>
+          <div className="Comps">
+            <ItemList
+              items={this.state.data}
+              onToggleOpen={this.onToggleOpen}
+              error={this.state.error}
+              markers={this.state.data.locations}
+              selectFilter={this.selectFilter}
+              value={this.state.value}
+            />
+            <Map
+              markers={this.state.data}
+              onToggleOpen={this.onToggleOpen}
+              error={this.state.error}
+              value={this.state.value}
+            />
 
+          </div>
+          <footer className="App-footer">
+            <div className="footer-text">CL Mason Product</div>
+            <div className="shoutout">using Google Maps and myJSON API data</div>
+          </footer>
         </div>
-        <footer className="App-footer">
-          <div className="footer-text">CL Mason Product</div>
-          <div className="shoutout">using Google Maps and myJSON API data</div>
-        </footer>
       </div>
     );
   }

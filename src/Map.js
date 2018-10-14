@@ -3,13 +3,15 @@ import React, { Component } from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
 import './Map.css';
 import './InfoWindow.css';
-import {FaAnchor} from 'react-icons/fa';
 import InfoWindowContent from './InfoWindowContent.js';
 
 const MyMapComponent = withScriptjs(withGoogleMap((props, state) =>
   <GoogleMap
     defaultZoom = {15}
     defaultCenter = {{ lat: 30.381025, lng: -86.866819 }}
+    role="application"
+    tabIndex={-1}
+
     >
     {(props.error) ?
         <InfoWindow
@@ -20,7 +22,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props, state) =>
         props.isMarkerShown &&
       /* added .map to add latlng data from extendable object*/
       props.markers
-      .filter((marker) => (marker[props.value] || props.value == "default"))
+      .filter((marker) => (marker[props.value] || props.value === "default"))
       .map((marker) => (
         <Marker
           key={marker.id}
@@ -30,6 +32,9 @@ const MyMapComponent = withScriptjs(withGoogleMap((props, state) =>
         >
           {marker.isOpen &&
           <InfoWindow className="info-window"
+            tabIndex={0}
+            role="dialog"
+            aria-label="Map Info Window"
           >
             <InfoWindowContent
               marker = { marker }
@@ -59,7 +64,7 @@ class Map extends Component {
 
 
     return (
-      <div className="Map">
+      <div className="Map" role="application" aria-label="Google Map">
         <MyMapComponent
           {...this.props}
           center = {this.state.center}

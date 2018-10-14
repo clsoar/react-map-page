@@ -30,7 +30,6 @@ class InfoWindowContent extends Component {
     return (
       <div className="window-content">
         <h3 className="window-heading">{this.props.marker.name}</h3>
-        <img src="#" alt="Alt text" className="window-image"/>
         <div className="window-address">{this.props.marker.address}</div>
         <div className="window-website"><a target="_blank" href={this.props.marker.website}>Accomadation Website</a></div>
         <div className="window-phone">{this.props.marker.phone}</div>

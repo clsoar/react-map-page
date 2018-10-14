@@ -17,31 +17,41 @@ class ItemList extends Component {
           selectFilter={this.props.selectFilter}
           value={this.props.value}
         />
-        <div className="item-bar">
+        <React.Fragment>
           <ol className="item-list">
             {this.props.items
-              .filter((item) => (item[this.props.value] || this.props.value == "default"))
+              .filter((item) => (item[this.props.value] || this.props.value === "default"))
               .map((item) => (
                 <li
                   key={item.id}
                   className="item-list-items"
-                  onClick={() => this.props.onToggleOpen(item)}
                   >
-                  <Item
-                    item={item}
-                  >
-                  {item.isOpen &&
-                  <InfoWindow className="info-window">
-                    <InfoWindowContent
-                      marker={ item }
-                    />
-                  </InfoWindow>}
-                  </Item>
+                  <button
+                    className="item-list-button"
+                    onClick={() => this.props.onToggleOpen(item)}
+                    tabIndex={0}
+                    >
+                    <Item
+                      item={item}
+                    >
+                      {item.isOpen &&
+                        <InfoWindow
+                          className="info-window"
+                          aria-label="Map Info Window"
+                          >
+                          <dialog className="info-window-dialog">
+                            <InfoWindowContent
+                              marker={ item }
+                              />
+                          </dialog>
+                        </InfoWindow>}
+                      </Item>
+                    </button>
                 </li>
             ))}
 
           </ol>
-        </div>
+        </React.Fragment>
 
       </div>
     )

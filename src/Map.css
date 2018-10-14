@@ -8,6 +8,7 @@
 
   grid-gap: .1em;
 }
+
 .Map {
   text-align: center;
   padding: 5px;
@@ -19,13 +20,19 @@
   font-weight: 700;
   padding: 5px;
 }
+
 .item-list {
   padding-left: 0px;
 
 }
 .item-list-items {
   list-style-type: none;
+}
+
+.item-list-button {
   background-color: lightblue;
+  display: block;
+  width: 100%;
   margin: 5px;
   font-size: 1em;
   padding: 10px 2px 10px 2px;
@@ -34,6 +41,14 @@
 .items {
   color: navy;
   text-align: left;
+}
+
+li:focus {
+  outline: 3px solid darkblue;
+}
+
+:focus {
+  outline: 3px solid darkblue;
 }
 
 .item-heading {
