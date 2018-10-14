@@ -23,14 +23,14 @@ Note: The service worker will only be implemented if you build the app for produ
 
 ## Use
 
-The dropdown menu provides a list of amenities that the user may use to filter the available )accomadations.
+The dropdown menu provides a list of amenities that the user may use to filter the available accomadations.
 
 More information can be viewed by clicking on the list of accomdations or on the map markers. Information includes name, address, phone number, website, type of accomadations, available amenities, and a description of the location.
 
 ## Dependencies
 
-* Google Maps Javascript API v3 - The map runs in developer mode or an API key can be obtained and included in Maps.js at 73:65 as key="YOUR-API-KEY-HERE".
-* myJSON.com API is 
+* Google Maps Javascript API v3 - The map runs in developer mode or an API key can be obtained and included in Map.js at 73:65 as key="YOUR-API-KEY-HERE".
+* myJSON.com API is used to get the accomadation's information.
 
 ## Credit
 
@@ -69,6 +69,10 @@ my-app/
     MyMapComponenet.js
     registerServiceWorker.js
 ```
+
+---------------------------------------------------------------------------------------------------
+Details on how to launch final version to github pages
+---------------------------------------------------------------------------------------------------
 
 ### [GitHub Pages](https://pages.github.com/)
 
