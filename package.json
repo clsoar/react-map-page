@@ -2,11 +2,13 @@
   "name": "react-map-page",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://clsoar.github.io/react-map-page/",
   "dependencies": {
     "@types/googlemaps": "^3.30.13",
     "@types/markerclustererplus": "^2.1.33",
     "@types/react": "^16.4.14",
     "ajv": "^6.5.4",
+    "gh-pages": "^2.0.1",
     "merge": "^1.2.1",
     "react": "^16.5.2",
     "react-document-title": "^2.0.3",
@@ -16,6 +18,8 @@
     "react-scripts": "1.1.5"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
