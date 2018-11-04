@@ -43,34 +43,3 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 React-google-maps library was used to integrate Google Maps into React. Documentation can be found at the Github Repo [https://github.com/tomchentw/react-google-maps](https://github.com/tomchentw/react-google-maps).
 
 Forrest Walker's YouTube tutorial and Slack tips helped troubleshoot opening the InfoWindows and with a map refresh issue. His YouTube tutorial can be found on his [channel](https://www.youtube.com/watch?v=VhXuEvkpxK0).
-
-## Folder Structure
-
-After creation, your project should look like this:
-
-```
-my-app/
-  README.md
-  node_modules/
-  package.json
-  public/
-    index.html
-    favicon.ico
-  src/
-    App.css
-    App.js
-    App.test.js
-    data.json
-    FilterOptions.js
-    index.css
-    index.js
-    InfoWindow.css
-    Item.js
-    ItemList.js
-    Map.css
-    Map.js
-    markers.js
-    MyMapComponenet.js
-    registerServiceWorker.js
-```
-
